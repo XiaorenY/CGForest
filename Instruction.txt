@@ -1,0 +1,28 @@
+Instruction on Projecrt 2.
+
+by Xiaoren Yang
+
+open 'project2.html' with chrome.
+click 'choose file' button, select input files to test.
+click 'draw'. The picture will show up.
+
+'lsysOwnStochastic1.txt', 'lsysOwnStochastic2.txt' are two input file I write
+
+Explanation about the model:
+
+'model.js' contains all the class I define. I use ECMAScript 6 to define the class. So only chrome will work.  
+The way I model is a little bit different from the instruction on the web page.
+Class 'LSystem' contains all the information about the input file. When the LSystem object is constructed, it will rewrite itself. 
+Class 'Grammar' contains a list of Rules. Routine 'getRhs' return the rhs base on the input lhs. It handles the case of multiple rhs. 
+Class 'Rule' contains lhs and rhs, if the this rule has multiple rhs, those rhs will store in a list. 
+
+'polyCylinder.js' contains the routine to generate sphere, cylinder and terrian. 
+
+'project2.js' is the main script. The radius, theta and phi of camera placed at the top of the file. 
+'inputFile' routine deals with the input file. Click 'choose file' button at the top. Choose one file at a time. 
+'parseFile' help function parse the file. called in 'inputFile'. 
+'vertexGenerate' working on the vertex points and colors array. First generate the terrian, then multiple trees.
+
+'render' render the terrian and multiple trees. 'renderLSystem' is the help function to render the tree. 
+
+'sample.jpg' is the sample result of all 7 lsys files. 

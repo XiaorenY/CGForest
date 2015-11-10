@@ -1,0 +1,6 @@
+len: 1
+iter: 5
+rot:  50.0 30.0 10.0
+start: F
+F(0.2): F[+FF&F\]FFF[\^/F]F
+F(0.8): F[+F-F]F

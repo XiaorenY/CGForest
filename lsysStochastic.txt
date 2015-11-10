@@ -1,0 +1,34 @@
+# L-System file for drawing something nice: Stochastic plant.
+#
+# Author: Robert W. Lindeman
+# Date: 2005-11-05
+#
+#
+# The structure of the file is:
+# 1. Some number of comment lines, each beginning with a '#' in the first position.
+# 2. A line beginning with the word "len" followed by a colon, a space, and then a
+#    single integer representing the length of each segment to draw.
+# 3. A line beginning with the word "iter" followed by a colon, a space, and then a
+#    single integer representing the number of iterations to apply.
+# 4. A line beginning with the word "rot" followed by a colon, a space, and then three
+#    floating-point numbers, separated by spaces, representing the X, Y, and Z rotations,
+#    respectively.
+# 5. Zero or more lines beginning with the word "rep" followed by a colon, a space, and then
+#    a pair of characters "X,Y". These are used to go through the string that results after
+#    applying the production rules "iter" times. For each occurence of "X" in this string,
+#    it is replaced with the character "Y". "Y" may be ommitted, in which case all
+#    occurences of "X" are removed from the string.
+# 6. A line beginning with the word "start" followed by a colon, a space, and then
+#    the initial turtle string.
+# 7. Some number of production rules of the form: "L(p.pp): R", where "L" is a single
+#    character representing the left-hand side of the rule, "p.pp" is the probability
+#    that this rule will be chosen from among all those with the same left-hand side,
+#    and "R" is a sequence of characters representing the replacement string for "L".
+#    All the probabilities for a given left-hand side should sum to 1.
+len: 1
+iter: 5
+rot: 30.0 30.0 30.0
+start: F
+F(0.33): F[+F]F[-F]F
+F(0.33): F[+F]F
+F(0.34): F[-F]F

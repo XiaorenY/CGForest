@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+
+        attribute  vec4 vPosition;
+        attribute  vec4 vColor;
+        varying    vec4 fColor;
+
+        uniform    mat4 modelView;
+        uniform    mat4 projection;
+
+        void main()
+        {
+            gl_Position = projection * modelView * vPosition;
+            fColor = vColor;
+
+        }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+
+        precision mediump float;
+
+        varying vec4 fColor;
+
+        void main()
+        {
+
+            gl_FragColor = fColor;
+        }
+    </script>
+
+    <script type="text/javascript" src="webgl-utils.js"></script>
+    <script type="text/javascript" src="initShaders.js"></script>
+    <script type="text/javascript" src="MV.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="project2.js"></script>
+    <script type="text/javascript" src="polyCylinder.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <input type="file" id="fileInput">
+
+    </div>
+    <br />
+    <div>
+        <input type="button" id="clickToDraw" value="draw">
+    </div>
+    <br />
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+</body>
+</html>
